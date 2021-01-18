@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "akita-ng-effects-stackblitz"
+  "defaultProject": "akita-ng-effects-stackblitz",
+  "cli": {
+    "analytics": "e193c0dc-6f78-4364-928c-cd977c2e708c"
+  }
 }
