@@ -1126,10 +1126,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@datorama/akita-ng-effects@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@datorama/akita-ng-effects/-/akita-ng-effects-1.0.0.tgz#454eae1ca4dbee26e235d9cde59a09f1c6d79d85"
-  integrity sha512-abuJtRvnZj8zL8c9r1gmee3/FEYG6VCxEBghpr3ZtmZPmLA6rWYgpvrfAkv3HR+XqF+Yz5ndljj7wkN2QrIBbQ==
+"@datorama/akita-ng-effects@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@datorama/akita-ng-effects/-/akita-ng-effects-1.0.1.tgz#4b5523f56cfbe3b0a4d809eb10f1af0857d9b9ad"
+  integrity sha512-6Ai3ilZ2d/PGMOTuOWs8kYe8XGESbSOpshL3xy2v45whNr65zuUgwYJpRdj1OkT8gTMGdqdHkdTrG7dYv3HsjA==
   dependencies:
     ts-action "^11.0.0"
     ts-action-operators "^9.1.1"

@@ -15,8 +15,10 @@ export class TodoService {
   }
 
   get() {
+    this.todoStore.setLoading()
     return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos?userId=1').pipe(tap(entities => {
       this.todoStore.set(entities);
+          this.todoStore.setLoading(false)
     }));
   }
 

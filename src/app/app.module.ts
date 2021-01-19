@@ -6,10 +6,12 @@ import { TodoEffects }          from './+state/todo.effects';
 import { HttpClientModule }     from '@angular/common/http';
 import { FormsModule }          from '@angular/forms';
 import { AkitaNgDevtools }      from '@datorama/akita-ngdevtools';
+import { SnackbarComponent }    from './snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,

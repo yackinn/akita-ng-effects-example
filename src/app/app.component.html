@@ -1,5 +1,7 @@
 <h1>Todos</h1>
 
+<app-snackbar></app-snackbar>
+
 <h4>Add your todos</h4>
 <input type="text" placeholder="add todo" [(ngModel)]="currentTodo">
 <button (click)="addTodo()">Add</button>
@@ -10,3 +12,4 @@
     {{ todo.title }}
   </li>
 </ul>
+
