@@ -1,8 +1,8 @@
 import { Injectable }                            from '@angular/core';
 import { Actions, createEffect, Effect, ofType } from '@datorama/akita-ng-effects';
-import { TodoActions }                           from './todo.actions';
-import { map, switchMap }                        from 'rxjs/operators';
-import { TodoService }                           from './todo.service';
+import { TodoActions }         from './todo.actions';
+import { map, switchMap, tap } from 'rxjs/operators';
+import { TodoService }         from './todo.service';
 import { TodoStore }                             from './todo.store';
 import { SnackbarService }                       from '../snackbar/snackbar.service';
 import { SnackbarActions }                       from '../snackbar/snackbar.actions';
@@ -26,9 +26,7 @@ export class TodoEffects {
   @Effect({ dispatch: true })
   addTodo$ = this.actions$.pipe(
     ofType(TodoActions.addTodo),
-    map(({ todo }) => {
-      this.todoStore.add(todo);
-      return SnackbarActions.showSnackbar({ message: `Item has been added ${todo.title}` });
-    }),
+    tap(({ todo }) => this.todoStore.add(todo)),
+    map(({ todo }) => SnackbarActions.showSnackbar({ message: `Item has been added ${todo.title}` }))
   );
 }
