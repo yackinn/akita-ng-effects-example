@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TodoQuery }         from './+state/todo.query';
 import { Actions }           from '@datorama/akita-ng-effects';
 import { TodoActions }       from './+state/todo.actions';
+import { Observable }        from 'rxjs';
+import { Todo }              from './todo.model';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,7 @@ import { TodoActions }       from './+state/todo.actions';
 })
 export class AppComponent implements OnInit{
   currentTodo = ""
-  todos$ = this.todoQuery.selectAll$
+  todos$: Observable<Todo[]>
 
   constructor(
     private todoQuery: TodoQuery,
@@ -20,6 +22,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     this.actions$.dispatch(TodoActions.loadTodos())
+    this.todos$ = this.todoQuery.selectAll$
   }
 
   addTodo() {

@@ -7,6 +7,7 @@ import { HttpClientModule }     from '@angular/common/http';
 import { FormsModule }          from '@angular/forms';
 import { AkitaNgDevtools }      from '@datorama/akita-ngdevtools';
 import { SnackbarComponent }    from './snackbar/snackbar.component';
+import { SnackbarEffects }      from './snackbar/snackbar.effects';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { SnackbarComponent }    from './snackbar/snackbar.component';
   ],
   imports: [
     BrowserModule,
-    AkitaNgEffectsModule.forRoot([TodoEffects]),
+    AkitaNgEffectsModule.forRoot([TodoEffects, SnackbarEffects]),
     HttpClientModule,
     FormsModule,
     AkitaNgDevtools.forRoot()

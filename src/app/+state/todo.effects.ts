@@ -5,6 +5,7 @@ import { map, switchMap }                        from 'rxjs/operators';
 import { TodoService }                           from './todo.service';
 import { TodoStore }                             from './todo.store';
 import { SnackbarService }                       from '../snackbar/snackbar.service';
+import { SnackbarActions }                       from '../snackbar/snackbar.actions';
 
 @Injectable()
 export class TodoEffects {
@@ -22,18 +23,12 @@ export class TodoEffects {
     switchMap(_ => this.todoService.get())
   ));
 
-  @Effect()
+  @Effect({ dispatch: true })
   addTodo$ = this.actions$.pipe(
     ofType(TodoActions.addTodo),
-    map(({todo}) => {
-      this.todoStore.add(todo)
-      this.snackbarService.showSnackbar(todo)
+    map(({ todo }) => {
+      this.todoStore.add(todo);
+      return SnackbarActions.showSnackbar({ todo });
     }),
-  )
-
-  @Effect()
-  addTodoSuccess$ = this.actions$.pipe(
-    ofType(TodoActions.addTodoSuccess),
-    map(({ todo }) => this.snackbarService.showSnackbar(todo))
   );
 }
