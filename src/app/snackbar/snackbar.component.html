@@ -1,4 +1,3 @@
 <div class="snackbar" *ngIf="(snackbar$ | async)?.show">
-  <h3>Item added</h3>
-  <p>{{(snackbar$ | async)?.todo?.title}}</p>
+  <p>{{(snackbar$ | async)?.message}}</p>
 </div>

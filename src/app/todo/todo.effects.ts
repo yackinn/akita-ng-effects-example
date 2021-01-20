@@ -20,7 +20,7 @@ export class TodoEffects {
 
   loadTodos$ = createEffect(() => this.actions$.pipe(
     ofType(TodoActions.loadTodos),
-    switchMap(_ => this.todoService.get())
+    switchMap(() => this.todoService.get())
   ));
 
   @Effect({ dispatch: true })
@@ -28,7 +28,7 @@ export class TodoEffects {
     ofType(TodoActions.addTodo),
     map(({ todo }) => {
       this.todoStore.add(todo);
-      return SnackbarActions.showSnackbar({ todo });
+      return SnackbarActions.showSnackbar({ message: `Item has been added ${todo.title}` });
     }),
   );
 }

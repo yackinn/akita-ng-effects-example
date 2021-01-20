@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoQuery }         from './+state/todo.query';
+import { TodoQuery }         from './todo/todo.query';
 import { Actions }           from '@datorama/akita-ng-effects';
-import { TodoActions }       from './+state/todo.actions';
+import { TodoActions }       from './todo/todo.actions';
 import { Observable }        from 'rxjs';
 import { Todo }              from './todo.model';
 

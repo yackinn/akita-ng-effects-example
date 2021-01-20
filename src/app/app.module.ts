@@ -2,7 +2,7 @@ import { BrowserModule }        from '@angular/platform-browser';
 import { NgModule }             from '@angular/core';
 import { AppComponent }         from './app.component';
 import { AkitaNgEffectsModule } from '@datorama/akita-ng-effects';
-import { TodoEffects }          from './+state/todo.effects';
+import { TodoEffects }          from './todo/todo.effects';
 import { HttpClientModule }     from '@angular/common/http';
 import { FormsModule }          from '@angular/forms';
 import { AkitaNgDevtools }      from '@datorama/akita-ngdevtools';

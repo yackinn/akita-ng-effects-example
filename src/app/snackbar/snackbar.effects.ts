@@ -16,6 +16,6 @@ export class SnackbarEffects {
   @Effect()
   showSnackbar$ = this.actions$.pipe(
     ofType(SnackbarActions.showSnackbar),
-    map(({ todo }) => this.snackbarService.showSnackbar(todo))
+    map(({ message }) => this.snackbarService.showSnackbar(message))
   );
 }

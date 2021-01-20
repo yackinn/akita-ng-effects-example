@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SnackbarService }   from './snackbar.service';
 import { Observable }        from 'rxjs';
-import { Todo }              from '../todo.model';
+
 
 @Component({
   selector: 'app-snackbar',
@@ -9,7 +9,7 @@ import { Todo }              from '../todo.model';
   styleUrls: ['./snackbar.component.scss']
 })
 export class SnackbarComponent implements OnInit {
-  snackbar$: Observable<{show: boolean, todo: Todo}>
+  snackbar$: Observable<{show: boolean, message: string}>
 
   constructor(
     private snackbarService: SnackbarService

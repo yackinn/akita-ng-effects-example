@@ -1,20 +1,14 @@
 import { Injectable }                from '@angular/core';
 import { BehaviorSubject }           from 'rxjs';
 import { debounceTime, filter, map } from 'rxjs/operators';
-import { Todo }                      from '../todo.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SnackbarService  {
-  snackbar$ = new BehaviorSubject<{show: boolean, todo: Todo}>({
+  snackbar$ = new BehaviorSubject<{show: boolean, message: string}>({
     show: false,
-    todo: {
-      userId: null,
-      title: "",
-      id: null,
-      completed: false
-    }
+    message: ""
   })
 
   constructor() {
@@ -22,13 +16,13 @@ export class SnackbarService  {
       filter(val => val.show),
       debounceTime(4000),
       map(val => {
-        this.snackbar$.next({show: false, todo: val.todo})
+        this.snackbar$.next({show: false, message: val.message})
       })
     ).subscribe()
   }
 
-  showSnackbar(todo: Todo) {
-    this.snackbar$.next({show: true, todo})
+  showSnackbar(message: string) {
+    this.snackbar$.next({show: true, message})
   }
 
 }
